@@ -6,13 +6,17 @@
 package model.Business;
 
 import java.util.ArrayList;
-import model.CustomerManagement.ChannelCatalog;
+
 import model.CustomerManagement.CustomerDirectory;
-import model.CustomerManagement.MarketCatalog;
+import model.MarketModel.ChannelCatalog;
+import model.MarketModel.MarketCatalog;
+import model.MarketModel.MarketChannelAssignment;
+import model.MarketModel.MarketChannelComboCatalog;
 import model.MarketingManagement.MarketingPersonDirectory;
 import model.OrderManagement.MasterOrderList;
 import model.Personnel.EmployeeDirectory;
 import model.Personnel.PersonDirectory;
+import model.ProductManagement.MasterSolutionOrderList;
 import model.ProductManagement.ProductSummary;
 import model.ProductManagement.ProductsReport;
 import model.ProductManagement.SolutionOfferCatalog;
@@ -34,24 +38,32 @@ public class Business {
   SupplierDirectory suppliers;
   MarketCatalog marketcatalog;
   ChannelCatalog channelcatalog;
+  // MarketChannelAssignment marketchannelassignment;
   SolutionOfferCatalog solutionoffercatalog;
   CustomerDirectory customerdirectory;
   EmployeeDirectory employeedirectory;
   SalesPersonDirectory salespersondirectory;
   UserAccountDirectory useraccountdirectory;
   MarketingPersonDirectory marketingpersondirectory;
+  MarketChannelComboCatalog marketchannelcombocatalog;
+  MasterSolutionOrderList mastersolutionorderlist;
 
   public Business(String n) {
     name = n;
     masterorderlist = new MasterOrderList();
     suppliers = new SupplierDirectory();
-    //        solutionoffercatalog = new SolutionOfferCatalog();
+    solutionoffercatalog = new SolutionOfferCatalog();
+    marketcatalog = new MarketCatalog();
+    channelcatalog = new ChannelCatalog();
     persondirectory = new PersonDirectory();
     customerdirectory = new CustomerDirectory(this);
     salespersondirectory = new SalesPersonDirectory(this);
     useraccountdirectory = new UserAccountDirectory();
     marketingpersondirectory = new MarketingPersonDirectory(this);
     employeedirectory = new EmployeeDirectory(this);
+    mastersolutionorderlist = new MasterSolutionOrderList();
+    marketchannelcombocatalog = new MarketChannelComboCatalog();
+    
   }
 
   public int getSalesVolume() {
@@ -110,4 +122,20 @@ public class Business {
   public EmployeeDirectory getEmployeeDirectory() {
     return employeedirectory;
   }
+  public MarketCatalog getMarketCatalog(){
+    return marketcatalog;
+  }
+  public ChannelCatalog getChannelCatalog(){
+    return channelcatalog;
+  }
+  public MarketChannelComboCatalog getMarketChannelComboCatalog(){
+    return marketchannelcombocatalog;
+  }
+  public SolutionOfferCatalog getSolutionOfferCatalog(){
+    return solutionoffercatalog;
+  }
+  public MasterSolutionOrderList getMasterSolutionOrderList(){
+    return mastersolutionorderlist;
+  }
+  
 }
