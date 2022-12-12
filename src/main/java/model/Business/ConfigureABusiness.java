@@ -17,18 +17,24 @@ import org.apache.commons.lang3.RandomUtils;
 
 import com.github.javafaker.service.RandomService;
 
+import model.CustomerManagement.CustomerDirectory;
+import model.CustomerManagement.CustomerProfile;
 import model.MarketModel.Channel;
 import model.MarketModel.ChannelCatalog;
 import model.MarketModel.Market;
 import model.MarketModel.MarketCatalog;
 import model.MarketModel.MarketChannelAssignment;
 import model.MarketModel.MarketChannelComboCatalog;
+import model.Personnel.Person;
+import model.Personnel.PersonDirectory;
 import model.ProductManagement.MasterSolutionOrderList;
 import model.ProductManagement.Product;
 import model.ProductManagement.ProductCatalog;
 import model.ProductManagement.SolutionOffer;
 import model.ProductManagement.SolutionOfferCatalog;
 import model.ProductManagement.SolutionOrder;
+import model.SalesManagement.SalesPersonDirectory;
+import model.SalesManagement.SalesPersonProfile;
 import model.Supplier.SupplierDirectory;
 import model.Supplier.Supplier;
 
@@ -40,6 +46,22 @@ public class ConfigureABusiness {
 
   public static Business initialize() {
     Business business = new Business("Amazon");
+
+    // Create Persons
+    PersonDirectory persondirectory = business.getPersonDirectory();
+    // person representing sales organization        
+    Person salesperson001 = persondirectory.newPerson("sales");
+    Person marketingperson001 = persondirectory.newPerson("marketing");
+    
+
+    // Create Customers
+    CustomerDirectory customedirectory = business.getCustomerDirectory();
+    CustomerProfile customerprofile1 = customedirectory.newCustomerProfile(salesperson001);
+    
+
+    // Create Sales people
+    SalesPersonDirectory salespersondirectory = business.getSalesPersonDirectory();
+    SalesPersonProfile salespersonprofile = salespersondirectory.newSalesPersonProfile(salesperson001);
 
     
    
