@@ -1,6 +1,6 @@
 # Digital Marketing Strategy Automation System
 
-Welcome to the Digital Marketing Strategy Automation System repository. This repository houses the code and documentation for a comprehensive system designed to automate the process of creating and executing digital marketing strategies. This system focuses on refining marketing strategies for a specified business entity, particularly Amazon. The application employs advanced algorithms to customize marketing campaigns according to various market segments, channels, and age groups.
+This repository houses the code and documentation for a comprehensive system designed to automate the process of creating and executing digital marketing strategies. This system focuses on refining marketing strategies for a specified business entity, particularly Amazon. The application employs advanced algorithms to customize marketing campaigns according to various market segments, channels, and age groups.
 
 ## E-Commerce Dynamics Parameters
 
